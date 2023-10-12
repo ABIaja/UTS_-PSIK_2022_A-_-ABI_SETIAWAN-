@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* CSS untuk elemen body */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: flex;
+            flex-direction: column; /* Atur tata letak menjadi kolom */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: rgb(54, 255, 178);
+        }
+
+        /* Pengaturan tampilan sidebar */
+        .sidebar {
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0; /* Mengisi keseluruhan tinggi layar */
+            background-color: #333;
+            padding-top: 20px;
+            max-height: 100%; /* Tinggi maksimum untuk sidebar */
+            overflow-y: auto; /* Pengguliran jika kontennya melebihi tinggi maksimum */
+        }
+
+        .sidebar ul li a.active {
+            background-color: #555;
+            color: rgb(88, 233, 30);
+        }
+
+        /* Pengaturan tampilan profil gambar */
+        .profile-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .round-image {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+
+        /* Pengaturan tampilan judul di sidebar */
+        .sidebar h2 {
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 10px;
+        }
+
+        /* Pengaturan tampilan daftar menu di sidebar */
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            text-align: center;
+            margin: 0;
+            padding: 8px;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Pengaturan tampilan menu aktif */
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Tampilan kelas "content" */
+        .content {
+            margin: 10px 10px 10px 270px; /* Ratakan atas, kanan, bawah, dan kiri, dan sesuaikan dengan lebar sidebar */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Tombol hamburger icon hanya pada layar kecil (handphone) */
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                font-size: 24px;
+                cursor: pointer;
+                color: #fff;
+            }
+
+            .sidebar {
+                display: none; /* Sembunyikan sidebar */
+            }
+
+            .content {
+                margin: 0; /* Atur margin menjadi 0 untuk konten */
+                padding: 20px;
+            }
+
+            /* Tambahkan margin untuk footer agar tidak menimpa link blog */
+            .footer {
+                margin-top: 20px;
+            }
+        }
+
+        /* Sembunyikan tombol hamburger icon pada layar PC */
+        @media screen and (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+    </style>
+    <title>Halaman Home</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile-image">
+            <img src="./assets/images/history.jpg" alt="Foto Profil" class="round-image">
+        </div>
+        <h2>Abi Setiawan</h2>
+        <br>
+        <button class="menu-toggle">&#9776</button> 
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Experience</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <section id="home">
+            <h1>Selamat Datang di Halaman Home</h1>
+            <p>  Ini adalah halaman utama website kami. Selamat datang!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In veritatis placeat explicabo doloribus, voluptates architecto nihil reiciendis accusantium quae maxime quos saepe perferendis delectus rerum enim porro vitae dolore suscipit.</p>
+        </section>
+    </div>
+    <div class="footer">
+        <p>&copy; 2023 UTS.</p>
+    </div>
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const sidebar = document.querySelector(".sidebar");
+        const content = document.querySelector(".content");
+
+        menuToggle.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+            content.classList.toggle("active");
+        });
+    </script>
+</body>
+</html>

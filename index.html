@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <title>Halaman Home</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile-image">
+            <img src="./assets/images/abi33.jpg" alt="Foto Profil" class="round-image">
+        </div>
+        <h2>Abi Setiawan</h2>
+        <br>
+        <button class="menu-toggle">&#9776</button> 
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">Skills</a></li>
+            <li><a href="about.html">Education</a></li>
+            <li><a href="about.html">Experience</a></li>
+            <li><a href="about.html">Work</a></li>
+            <li><a href="about.html">Blog</a></li>
+            <li><a href="about.html">Contact</a></li>
+        </ul>
+        <br><br><br><br>
+        <div class="footer">
+            <p>&copy; 2023 UTS. Abi Setiawan</p>
+        </div>
+    </div>
+    <div id="Home">
+        <section id="home">
+            <img src="./assets/images/wel-removebg-preview.png" alt="selamat">
+        </section>
+    </div>
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const sidebar = document.querySelector(".sidebar");
+        const content = document.querySelector(".content");
+
+    
+        menuToggle.addEventListener("click", () => {
+            sidebar.classList.toggle("active");
+            content.classList.toggle("active");
+        });
+    </script>
+    
+</body>
+</html>
